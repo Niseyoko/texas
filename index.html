@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テキサスホールデム 統合分析カリキュレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>テキサスホールデム 統合分析カリキュレーター ♠️♥️♦️♣️</h1>
+    <p>あなたの手札と場のカードを入力してください。各確率がリアルタイムで分析されます。</p>
+
+    <div class="simulator">
+        <div class="controls">
+            <h2>カード入力</h2>
+            <div class="input-grid">
+                <div id="player-hand-inputs">
+                    </div>
+                <div id="board-card-inputs">
+                    </div>
+            </div>
+             <div class="input-group">
+                <label for="player-count">プレイヤー人数 (あなたを含む):</label>
+                <select id="player-count">
+                    <option value="2" selected>2人</option>
+                    <option value="3">3人</option>
+                    <option value="4">4人</option>
+                    <option value="5">5人</option>
+                    <option value="6">6人</option>
+                    <option value="7">7人</option>
+                    <option value="8">8人</option>
+                    <option value="9">9人</option>
+                    <option value="10">10人</option>
+                </select>
+            </div>
+            <button id="run-simulation">確率を計算</button>
+            <button id="reset-button">リセット</button>
+        </div>
+
+        <div id="results" class="results-container">
+            <div id="loading" class="hidden">計算中...</div>
+
+            <div id="my-analysis-section">
+                <h3>あなたの状況</h3>
+                <div class="my-analysis-content">
+                    <div id="current-hand-section"></div>
+                    <div id="my-prob-section"></div>
+                </div>
+            </div>
+            
+            <div id="win-rate-section">
+                <h3>勝率の変化 (シミュレーション)</h3>
+                <div class="win-rate-grid">
+                    <div class="win-rate-stage">
+                        <h4>フロップ時点</h4>
+                        <p>勝利: <span id="flop-win">--</span></p>
+                        <p>引分: <span id="flop-tie">--</span></p>
+                        <p>敗北: <span id="flop-lose">--</span></p>
+                    </div>
+                    <div class="win-rate-stage">
+                        <h4>ターン時点</h4>
+                        <p>勝利: <span id="turn-win">--</span></p>
+                        <p>引分: <span id="turn-tie">--</span></p>
+                        <p>敗北: <span id="turn-lose">--</span></p>
+                    </div>
+                    <div class="win-rate-stage">
+                        <h4>リバー時点</h4>
+                        <p>勝利: <span id="river-win">--</span></p>
+                        <p>引分: <span id="river-tie">--</span></p>
+                        <p>敗北: <span id="river-lose">--</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main-prob-table-section">
+                 <h3>相手の最終役の確率変化 (シミュレーション)</h3>
+                 <table id="prob-comparison-table">
+                     <thead>
+                         <tr>
+                             <th>役</th>
+                             <th>フロップ時点</th>
+                             <th>ターン時点</th>
+                             <th>リバー時点</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         </tbody>
+                 </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

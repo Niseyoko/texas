@@ -1,0 +1,87 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: #1d3557;
+    border-bottom: 2px solid #457b9d;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; border-bottom-style: dashed; border-bottom-width: 1px; }
+
+.simulator {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.controls { margin-bottom: 20px; }
+.input-grid { display: flex; gap: 20px; margin-bottom: 15px; }
+.input-group { margin-bottom: 15px; }
+
+button {
+    background-color: #457b9d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+button:hover { background-color: #1d3557; }
+#reset-button { background-color: #e63946; }
+#reset-button:hover { background-color: #a8202c; }
+
+/* カード入力UI */
+.card-selector { display: flex; align-items: center; gap: 5px; padding: 5px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 5px; }
+.card-selector label { font-weight: bold; min-width: 60px; text-align: right; margin-right: 5px; color: #555; font-size: 14px; }
+.card-input-wrapper { display: flex; }
+.suit-select { font-size: 18px; border: none; background: transparent; padding: 0 5px; appearance: none; cursor: pointer; width: 35px; }
+.rank-input { width: 40px; font-size: 16px; text-align: center; border: none; border-left: 1px solid #eee; text-transform: uppercase; }
+.rank-input:focus { outline: none; }
+.suit-red, .suit-red option { color: #d90429 !important; }
+.suit-blue, .suit-blue option { color: #0077b6 !important; }
+
+/* 結果表示 */
+.my-analysis-content { display: flex; gap: 20px; align-items: flex-start; }
+#current-hand-section { flex: 1; text-align: center; background: #e9ecef; padding: 10px; border-radius: 5px; margin-bottom: 15px; }
+#current-hand-section p { margin: 0; }
+#current-hand-section strong { font-size: 1.3em; color: #1d3557; }
+#my-prob-section { flex: 2; }
+#my-prob-section h4 { margin-top: 0; }
+#my-prob-section ul { list-style: none; padding: 0; margin: 0; }
+#my-prob-section li { background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; }
+#my-prob-section .combo-count { font-weight: bold; }
+
+/* 勝率表示 */
+#win-rate-section { margin-top: 20px; }
+.win-rate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.win-rate-stage { background: #f8f9fa; padding: 15px; border-radius: 5px; text-align: center; }
+.win-rate-stage p { margin: 5px 0; font-size: 1.1em; }
+.win-rate-stage span { font-weight: bold; font-size: 1.2em; }
+
+/* 確率表 */
+#main-prob-table-section { margin-top: 20px; }
+#prob-comparison-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+#prob-comparison-table th, #prob-comparison-table td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+#prob-comparison-table th { background-color: #e9ecef; }
+#prob-comparison-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
+
+.prob-change { font-size: 0.8em; margin-left: 5px; }
+.prob-up { color: #e76f51; }
+.prob-down { color: #2a9d8f; }
+
+.hidden { display: none; }
+#loading { text-align: center; padding: 20px; font-size: 1.2em; color: #e63946; }
